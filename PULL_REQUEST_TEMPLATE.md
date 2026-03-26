@@ -69,4 +69,4 @@
 
 ---
 
-Thank you for contributing! ðŸ™
+Thank you for contributing!
