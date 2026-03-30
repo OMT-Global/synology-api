@@ -19,6 +19,24 @@ Certificate:
     status: partial
 CloudSync:
     status: finished
+CoreDirectory:
+    status: partial
+CoreExternalDevice:
+    status: partial
+CoreNetwork:
+    status: partial
+CoreNotification:
+    status: partial
+CoreSecurity:
+    status: partial
+CoreService:
+    status: partial
+CoreStorage:
+    status: partial
+CoreSystem:
+    status: partial
+CoreUpgrade:
+    status: partial
 DhcpServer:
     status: partial
 DirectoryServer:
