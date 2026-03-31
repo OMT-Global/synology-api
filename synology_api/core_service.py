@@ -168,7 +168,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -202,7 +202,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -250,7 +250,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -409,7 +409,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -489,7 +489,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -569,7 +569,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -603,7 +603,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -880,7 +880,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -970,7 +970,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -1343,7 +1343,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -1565,7 +1565,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -1652,7 +1652,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -1892,7 +1892,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -1940,7 +1940,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2162,7 +2162,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2256,7 +2256,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2386,7 +2386,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2789,7 +2789,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2880,7 +2880,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2950,7 +2950,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -2988,7 +2988,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -3022,7 +3022,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
@@ -3056,7 +3056,7 @@ class CoreService(base_api.BaseApi):
         ----------
         **kwargs : dict
             Additional keyword arguments forwarded to the API.
-        
+
         Returns
         -------
         dict[str, object] or str
