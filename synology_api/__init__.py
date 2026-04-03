@@ -22,7 +22,6 @@ from . import \
     core_share, \
     core_storage, \
     core_sys_info, \
-    core_system, \
     core_upgrade, \
     core_user, \
     downloadstation, \

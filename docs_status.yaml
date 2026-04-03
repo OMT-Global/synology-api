@@ -33,8 +33,6 @@ CoreService:
     status: partial
 CoreStorage:
     status: partial
-CoreSystem:
-    status: partial
 CoreUpgrade:
     status: partial
 DhcpServer:
