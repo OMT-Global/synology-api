@@ -81,6 +81,7 @@ class Authentication:
                  device_id: Optional[str] = None,
                  device_name: Optional[str] = None,
                  enable_device_token: bool = False,
+                 force_plain_login: bool = False
                  ) -> None:
         """
         Initialize the Authentication object for Synology DSM.
@@ -137,6 +138,7 @@ class Authentication:
         self._device_name: Optional[str] = device_name
         self._enable_device_token: bool = enable_device_token
         self._did: Optional[str] = None
+        self._force_plain_login: bool = force_plain_login
 
         if self._verify is False:
             disable_warnings(InsecureRequestWarning)
@@ -159,7 +161,7 @@ class Authentication:
             The IK message.
         """
 
-        url = self._base_url + 'entry.cgi/SYNO.API.Auth.UIConfig'
+        url = self._base_url + 'entry.cgi'
         data = {
             "api": "SYNO.API.Auth.UIConfig",
             "method": "get",
@@ -225,7 +227,7 @@ class Authentication:
         params = {'api': "SYNO.API.Auth", 'version': self._version,
                   'method': 'login', 'enable_syno_token': 'yes', 'client': 'browser'}
 
-        if self._version >= 7:
+        if self._version >= 7 and not self._force_plain_login:
             params.update({'ik_message': self.get_ik_message()})
 
         params_enc = {
@@ -238,11 +240,7 @@ class Authentication:
             'session': 'webui',  # Hardcoded for handle non administrator users API usage
             'format': 'cookie'
         }
-        if self._secure:
-            params.update(params_enc)
-        else:
-            encrypted_params = self.encrypt_params(params_enc)
-            params.update(encrypted_params)
+        params.update(params_enc)
 
         if self._device_id is not None and self._device_name is not None:
             params['device_id'] = self._device_id
@@ -681,9 +679,10 @@ class Authentication:
         if method is None:
             method = 'get'
 
+        req_param['api'] = api_name
         req_param['_sid'] = self._sid
 
-        url = ('%s%s' % (self._base_url, api_path)) + '?api=' + api_name
+        url = '%s%s' % (self._base_url, api_path)
 
         # Do request and check for error:
         response: Optional[requests.Response] = None

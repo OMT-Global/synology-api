@@ -126,7 +126,8 @@ class FileStation(base_api.BaseApi):
                  otp_code: Optional[str] = None,
                  device_id: Optional[str] = None,
                  device_name: Optional[str] = None,
-                 interactive_output: bool = True
+                 interactive_output: bool = True,
+                 force_plain_login: bool = False
                  ) -> None:
         """
         Initialize FileStation API client.
@@ -158,8 +159,12 @@ class FileStation(base_api.BaseApi):
         interactive_output : bool, optional
             If True, outputs are formatted for interactive use. Default is True.
         """
-        super(FileStation, self).__init__(ip_address, port, username, password, secure, cert_verify,
-                                          dsm_version, debug, otp_code, device_id, device_name, 'FileStation')
+        super(FileStation, self).__init__(
+            ip_address, port, username, password, secure, cert_verify,
+            dsm_version, debug, otp_code, device_id, device_name,
+            application='FileStation',
+            force_plain_login=force_plain_login
+        )
 
         self._dir_taskid: str = ''
         self._dir_taskid_list: list[str] = []

@@ -65,6 +65,7 @@ class BaseApi(object):
                  device_name: Optional[str] = None,
                  enable_device_token: bool = False,
                  application: str = 'Core',
+                 force_plain_login: bool = False,
                  ) -> None:
         """
         Initialize the BaseApi object and create or reuse a session.
@@ -118,7 +119,8 @@ class BaseApi(object):
 
             self.session = syn.Authentication(
                 ip_address, port, username, password, secure, cert_verify, dsm_version, debug, otp_code,
-                device_id, device_name, enable_device_token
+                device_id, device_name, enable_device_token=enable_device_token,
+                force_plain_login=force_plain_login
             )
             self.session.login()
             self.session.get_api_list(self.application)
