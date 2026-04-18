@@ -76,7 +76,8 @@ class Authentication:
                  debug: bool = True,
                  otp_code: Optional[str] = None,
                  device_id: Optional[str] = None,
-                 device_name: Optional[str] = None
+                 device_name: Optional[str] = None,
+                 force_plain_login: bool = False
                  ) -> None:
         """
         Initialize the Authentication object for Synology DSM.
@@ -125,6 +126,7 @@ class Authentication:
         self._otp_code: Optional[str] = otp_code
         self._device_id: Optional[str] = device_id
         self._device_name: Optional[str] = device_name
+        self._force_plain_login: bool = force_plain_login
 
         if self._verify is False:
             disable_warnings(InsecureRequestWarning)
@@ -147,7 +149,7 @@ class Authentication:
             The IK message.
         """
 
-        url = self._base_url + 'entry.cgi/SYNO.API.Auth.UIConfig'
+        url = self._base_url + 'entry.cgi'
         data = {
             "api": "SYNO.API.Auth.UIConfig",
             "method": "get",
@@ -213,7 +215,7 @@ class Authentication:
         params = {'api': "SYNO.API.Auth", 'version': self._version,
                   'method': 'login', 'enable_syno_token': 'yes', 'client': 'browser'}
 
-        if self._version >= 7:
+        if self._version >= 7 and not self._force_plain_login:
             params.update({'ik_message': self.get_ik_message()})
 
         params_enc = {
@@ -226,11 +228,7 @@ class Authentication:
             'session': 'webui',  # Hardcoded for handle non administrator users API usage
             'format': 'cookie'
         }
-        if self._secure:
-            params.update(params_enc)
-        else:
-            encrypted_params = self.encrypt_params(params_enc)
-            params.update(encrypted_params)
+        params.update(params_enc)
 
         if self._otp_code:
             params['otp_code'] = self._otp_code
