@@ -668,9 +668,10 @@ class Authentication:
         if method is None:
             method = 'get'
 
+        req_param['api'] = api_name
         req_param['_sid'] = self._sid
 
-        url = ('%s%s' % (self._base_url, api_path)) + '?api=' + api_name
+        url = '%s%s' % (self._base_url, api_path)
 
         # Do request and check for error:
         response: Optional[requests.Response] = None
